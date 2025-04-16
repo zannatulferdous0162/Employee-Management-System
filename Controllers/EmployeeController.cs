@@ -88,7 +88,7 @@ namespace EmployeeManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,EmpNo,FirstName,MiddleName,LastName,EmailAddress,PhoneNumber,DateOfBirth,Country,Address,Department,Designation,CreatedById,CreatedOn,ModifiedById,ModifiedOn")] Employee employee)
+        public async Task<IActionResult> Edit(int id,  Employee employee)
         {
             if (id != employee.id)
             {
@@ -117,6 +117,9 @@ namespace EmployeeManagement.Controllers
             }
             return View(employee);
         }
+
+     
+
 
         // GET: Employee/Delete/5
         public async Task<IActionResult> Delete(int? id)
